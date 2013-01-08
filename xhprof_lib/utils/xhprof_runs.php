@@ -20,6 +20,11 @@
 // implementation of the interface (class XHProfRuns).
 //
 
+if (!defined('XHPROF_LIB_ROOT')) {
+  define('XHPROF_LIB_ROOT', dirname(dirname(__FILE__)));
+}
+require_once (XHPROF_LIB_ROOT . "/config.php");
+
 /**
  * iXHProfRuns interface for getting/saving a XHProf run.
  *
@@ -247,7 +252,7 @@ CREATE TABLE `details` (
   public static function getNextAssoc($resultSet)
   {
     $class = self::getDbClass();
-    return $class::getNextAssoc($resultSet);
+    return Db_Pdo::getNextAssoc($resultSet);
   }
   
   /**

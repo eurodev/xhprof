@@ -1,4 +1,5 @@
 <?php
+global $_xhprof;
 $_xhprof = array();
 
 // Change these:
